@@ -110,6 +110,8 @@ ksp { arg("room.schemaLocation", "$projectDir/schemas") }
 
 dependencies {
   implementation(libs.androidx.core.ktx)
+  // Storage Access Framework DocumentFile support
+  implementation("androidx.documentfile:documentfile:1.1.0")
   implementation(libs.androidx.lifecycle.runtime.ktx)
   implementation(libs.androidx.activity.compose)
   implementation(platform(libs.androidx.compose.bom))
