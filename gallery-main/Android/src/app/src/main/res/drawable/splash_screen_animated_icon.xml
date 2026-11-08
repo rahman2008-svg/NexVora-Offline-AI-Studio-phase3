@@ -1,0 +1,35 @@
+<!-- NexVora Offline AI Studio brand mark (original artwork). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="288dp"
+    android:height="288dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+  <path
+      android:fillColor="#FF0B1226"
+      android:strokeWidth="3"
+      android:strokeLineJoin="round"
+      android:pathData="M54.0 29.0 L75.6 41.5 L75.6 66.5 L54.0 79.0 L32.4 66.5 L32.4 41.5 Z">
+      <aapt:attr name="android:strokeColor">
+        <gradient android:startX="32" android:startY="29" android:endX="76" android:endY="79"
+            android:type="linear">
+          <item android:color="#FF22D3EE" android:offset="0.0" />
+          <item android:color="#FFA78BFA" android:offset="1.0" />
+        </gradient>
+      </aapt:attr>
+  </path>
+  <path
+      android:fillColor="#00000000"
+      android:strokeWidth="4.5"
+      android:strokeLineCap="round"
+      android:strokeLineJoin="round"
+      android:pathData="M45.0 63.0 L45.0 45.0 L63.0 63.0 L63.0 45.0">
+      <aapt:attr name="android:strokeColor">
+        <gradient android:startX="32" android:startY="29" android:endX="76" android:endY="79"
+            android:type="linear">
+          <item android:color="#FF22D3EE" android:offset="0.0" />
+          <item android:color="#FFA78BFA" android:offset="1.0" />
+        </gradient>
+      </aapt:attr>
+  </path>
+</vector>

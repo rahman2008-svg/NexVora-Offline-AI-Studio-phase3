@@ -1,0 +1,124 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.nexvora.offlineai.ui.common.chat
+
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.ContentCopy
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.onClick
+import androidx.compose.ui.semantics.onLongClick
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.unit.dp
+import com.nexvora.offlineai.R
+
+/**
+ * A container that wraps a composable with long-press gesture detection to show a dropdown menu for
+ * copying text.
+ *
+ * If [onTap] is provided, a regular tap on the container triggers it.
+ */
+@Composable
+fun LongPressCopyContainer(
+  copyText: String,
+  modifier: Modifier = Modifier,
+  onCopyClicked: (String) -> Unit = {},
+  onTap: (() -> Unit)? = null,
+  content: @Composable () -> Unit,
+) {
+  var showMenu by remember { mutableStateOf(false) }
+  val haptic = LocalHapticFeedback.current
+  val moreOptionsLabel = stringResource(R.string.cd_more_options)
+  val currentOnTap by rememberUpdatedState(onTap)
+  val hasOnTap = onTap != null
+  Box(
+    modifier =
+      modifier
+        .pointerInput(hasOnTap) {
+          detectTapGestures(
+            onTap = if (hasOnTap) ({ _ -> currentOnTap?.invoke() }) else null,
+            onLongPress = {
+              haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+              showMenu = true
+            },
+          )
+        }
+        .semantics {
+          if (hasOnTap) {
+            onClick {
+              currentOnTap?.invoke()
+              true
+            }
+          }
+          onLongClick(moreOptionsLabel) {
+            showMenu = true
+            true
+          }
+        }
+  ) {
+    content()
+    DropdownMenu(
+      expanded = showMenu,
+      onDismissRequest = { showMenu = false },
+      shape = RoundedCornerShape(24.dp),
+      tonalElevation = 8.dp,
+      shadowElevation = 8.dp,
+    ) {
+      DropdownMenuItem(
+        text = {
+          Text(
+            stringResource(R.string.copy),
+            style =
+              MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.onSurface),
+          )
+        },
+        leadingIcon = {
+          Icon(
+            Icons.Rounded.ContentCopy,
+            contentDescription = stringResource(R.string.copy),
+            modifier = Modifier.size(18.dp),
+            tint = MaterialTheme.colorScheme.onSurfaceVariant,
+          )
+        },
+        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
+        onClick = {
+          showMenu = false
+          onCopyClicked(copyText)
+        },
+      )
+    }
+  }
+}

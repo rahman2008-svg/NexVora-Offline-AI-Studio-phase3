@@ -1,0 +1,17 @@
+NexVora Offline AI Studio
+Copyright (c) 2026 NexVora Lab's Ofc. All Rights Reserved.
+Developed by Prince AR Abdur Rahman.
+
+This product is a modified version of "Google AI Edge Gallery"
+(https://github.com/google-ai-edge/gallery), Copyright Google LLC,
+licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Modifications by NexVora Lab's Ofc include: application rebranding, new
+application ID (com.nexvora.offlineai), new theme/icon/splash/About screen,
+Bangla localization, and the complete removal of Firebase Analytics and
+Firebase Cloud Messaging.
+
+Original Google copyright headers in individual source files are preserved.
+"Google", "Gemma" and related names are trademarks of their respective owners.
+NexVora Offline AI Studio is an independent project and is not affiliated
+with or endorsed by Google.

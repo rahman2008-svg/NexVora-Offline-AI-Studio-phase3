@@ -1,0 +1,96 @@
+name: Android Validation
+
+# Fast project-configuration checks + a real Kotlin/resource/KSP/protobuf compile.
+# Produces no APK and publishes nothing.
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches-ignore: ["main"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  config-check:
+    name: Project configuration checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate Gradle wrapper
+        uses: gradle/actions/wrapper-validation@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PyYAML
+        run: python -m pip install pyyaml
+
+      - name: Run project validation script
+        run: python .github/scripts/validate_project.py
+
+  compile:
+    name: Compile (Debug)
+    needs: config-check
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: ./Android/src
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Set up Gradle (dependency cache)
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Install Android SDK Platform 37 and accept licenses
+        run: |
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-37.0"
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Show Gradle / JDK versions
+        run: ./gradlew --version
+
+      - name: Compile Kotlin, process resources, run KSP + protobuf
+        run: ./gradlew :app:compileDebugKotlin :app:compileDebugJavaWithJavac --stacktrace
+
+      - name: Run unit tests
+        run: ./gradlew :app:testDebugUnitTest --stacktrace
+
+      - name: Upload unit test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-reports
+          path: Android/src/app/build/reports/tests/testDebugUnitTest
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Upload exported Room schema (commit it to app/schemas)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: room-schemas
+          path: Android/src/app/schemas
+          if-no-files-found: ignore
+          retention-days: 14

@@ -1,0 +1,204 @@
+<!--
+ Copyright 2025 Google LLC (upstream). NexVora Offline AI Studio Bangla translation (c) 2026 NexVora Lab's Ofc
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<resources>
+  <!-- Bangla (bn). Strings not listed here fall back to the English values/strings.xml.
+       Technical terms (LLM, token, GPU, LiteRT, Gemma) are kept as-is on purpose. -->
+  <string name="app_name" translatable="false">NexVora Offline AI Studio</string>
+  <string name="app_name_first_part" translatable="false">NexVora</string>
+  <string name="app_name_second_part" translatable="false">Offline AI Studio</string>
+
+  <string name="tos_dialog_title_app">NexVora Offline AI Studio-তে স্বাগতম</string>
+  <string name="tos_dialog_body">NexVora Offline AI Studio আপনার ডিভাইসেই AI মডেল চালায়। আপনার চ্যাট ও ফাইল ডিভাইসের ভেতরেই প্রসেস হয় এবং এই অ্যাপ সেগুলো কোথাও আপলোড করে না।\n\nএই অ্যাপে কোনো অ্যানালিটিক্স বা ট্র্যাকিং নেই। শুধু মডেল ডাউনলোডের সময় (এবং আপনার বেছে নেওয়া ঐচ্ছিক ফিচারের জন্য) ইন্টারনেট লাগে। মডেল ডাউনলোড ও লোড হয়ে গেলে তার সমর্থিত ফিচারগুলো অফলাইনে কাজ করে।\n\nপ্রতিটি মডেল ব্যবহারের ক্ষেত্রে সংশ্লিষ্ট মডেল লাইসেন্সের শর্ত প্রযোজ্য।\n\nNexVora Offline AI Studio, Google AI Edge Gallery (Apache License 2.0) এর ওপর ভিত্তি করে তৈরি এবং Google-এর সাথে এর কোনো সম্পর্ক বা অনুমোদন নেই।</string>
+
+  <string name="about_title">সম্পর্কে</string>
+  <string name="about_open_menu_item">NexVora সম্পর্কে</string>
+  <string name="about_tagline">গোপনীয়তা-কেন্দ্রিক, অফলাইন-ফার্স্ট Android AI</string>
+  <string name="about_version">ভার্সন %1$s</string>
+  <string name="about_developed_by">ডেভেলপার</string>
+  <string name="about_published_by">প্রকাশক</string>
+  <string name="about_contact">যোগাযোগ</string>
+  <string name="about_whatsapp">WhatsApp</string>
+  <string name="about_email">ইমেইল</string>
+  <string name="about_facebook">Facebook</string>
+  <string name="about_instagram">Instagram</string>
+  <string name="about_credits">ক্রেডিট</string>
+  <string name="about_credits_body">ডেভেলপ করেছেন Prince AR Abdur Rahman। প্রকাশ করেছে NexVora Lab\'s Ofc।</string>
+  <string name="about_upstream">Apache License 2.0 এর অধীনে প্রকাশিত Google AI Edge Gallery এর ওপর ভিত্তি করে তৈরি। Google, Gemma এবং সংশ্লিষ্ট চিহ্নগুলো তাদের নিজ নিজ মালিকের। NexVora Offline AI Studio একটি স্বাধীন অ্যাপ; Google-এর সাথে এর কোনো সম্পর্ক বা অনুমোদন নেই।</string>
+  <string name="about_open_source_licenses">ওপেন-সোর্স লাইসেন্স</string>
+  <string name="about_copyright">© ২০২৬ NexVora Lab\'s Ofc। সর্বস্বত্ব সংরক্ষিত।</string>
+  <string name="about_navigate_up">ফিরে যান</string>
+
+  <!-- NexVora Phase 3 -->
+  <string name="nx_dash_subtitle" translatable="true">আপনার ডিভাইসেই অফলাইন-ফার্স্ট AI</string>
+  <string name="nx_quick_new_chat" translatable="true">নতুন চ্যাট</string>
+  <string name="nx_quick_history" translatable="true">চ্যাট</string>
+  <string name="nx_quick_model_hub" translatable="true">মডেল হাব</string>
+  <string name="nx_quick_privacy" translatable="true">প্রাইভেসি</string>
+  <string name="nx_quick_settings" translatable="true">সেটিংস</string>
+  <string name="nx_recent_chats" translatable="true">সাম্প্রতিক চ্যাট</string>
+  <string name="nx_recent_empty" translatable="true">এখনো কোনো চ্যাট নেই। নতুন চ্যাট শুরু করলে এখানে দেখা যাবে।</string>
+  <string name="nx_view_all" translatable="true">সব দেখুন</string>
+  <string name="nx_installed_models" translatable="true">ইনস্টল করা মডেল</string>
+  <string name="nx_installed_empty" translatable="true">এখনো কোনো মডেল ইনস্টল করা নেই। অফলাইনে চ্যাট করতে একটি ডাউনলোড করুন।</string>
+  <string name="nx_open_model_hub" translatable="true">মডেল হাব খুলুন</string>
+  <string name="nx_ai_tools" translatable="true">AI টুলস</string>
+  <string name="nx_all_ai_tasks" translatable="true">সব AI টাস্ক</string>
+  <string name="nx_storage_overview" translatable="true">স্টোরেজ ওভারভিউ</string>
+  <string name="nx_storage_models" translatable="true">ডাউনলোড করা মডেল</string>
+  <string name="nx_storage_chats" translatable="true">চ্যাট ডেটাবেস</string>
+  <string name="nx_storage_cache" translatable="true">ক্যাশ</string>
+  <string name="nx_storage_free" translatable="true">খালি জায়গা</string>
+  <string name="nx_privacy_status" translatable="true">প্রাইভেসি স্ট্যাটাস</string>
+  <string name="nx_privacy_status_body" translatable="true">কোনো অ্যানালিটিক্স বা ট্র্যাকিং নেই। আপনার চ্যাট এই ডিভাইসেই থাকে।</string>
+  <string name="nx_open_privacy_center" translatable="true">প্রাইভেসি সেন্টার খুলুন</string>
+  <string name="nx_save_history" translatable="true">চ্যাট হিস্ট্রি সেভ করুন</string>
+  <string name="nx_save_history_desc" translatable="true">বন্ধ থাকলে নতুন চ্যাট এই ডিভাইসে সেভ হবে না।</string>
+  <string name="nx_on" translatable="true">চালু</string>
+  <string name="nx_off" translatable="true">বন্ধ</string>
+  <string name="nx_loading" translatable="true">লোড হচ্ছে…</string>
+  <string name="nx_cancel" translatable="true">বাতিল</string>
+  <string name="nx_delete" translatable="true">মুছুন</string>
+  <string name="nx_save" translatable="true">সেভ</string>
+  <string name="nx_history_title" translatable="true">চ্যাট হিস্ট্রি</string>
+  <string name="nx_history_search_hint" translatable="true">চ্যাট খুঁজুন</string>
+  <string name="nx_clear_search" translatable="true">সার্চ মুছুন</string>
+  <string name="nx_history_empty" translatable="true">এখনো কোনো সেভ করা চ্যাট নেই।</string>
+  <string name="nx_history_no_results" translatable="true">আপনার সার্চের সাথে কোনো চ্যাট মেলেনি।</string>
+  <string name="nx_chat_meta" translatable="true">%1$s · %2$d টি মেসেজ</string>
+  <string name="nx_rename_title" translatable="true">চ্যাটের নাম বদলান</string>
+  <string name="nx_rename_failed" translatable="true">নাম বদলানো যায়নি। একটি নাম লিখে আবার চেষ্টা করুন।</string>
+  <string name="nx_delete_chat_title" translatable="true">চ্যাট মুছবেন?</string>
+  <string name="nx_delete_chat_body" translatable="true">\"%1$s\" ও এর মেসেজগুলো এই ডিভাইস থেকে মুছে যাবে।</string>
+  <string name="nx_conversation_not_found" translatable="true">এই চ্যাটটি আর নেই।</string>
+  <string name="nx_conversation_empty" translatable="true">এই চ্যাটে কোনো টেক্সট মেসেজ নেই।</string>
+  <string name="nx_continue_chat" translatable="true">এই চ্যাট চালিয়ে যান</string>
+  <string name="nx_role_you" translatable="true">আপনি</string>
+  <string name="nx_role_model" translatable="true">মডেল</string>
+  <string name="nx_role_system" translatable="true">সিস্টেম</string>
+  <string name="nx_privacy_title" translatable="true">প্রাইভেসি সেন্টার</string>
+  <string name="nx_privacy_no_tracking_title" translatable="true">কোনো অ্যানালিটিক্স বা ট্র্যাকিং নেই</string>
+  <string name="nx_privacy_no_tracking_body" translatable="true">এই অ্যাপে কোনো অ্যানালিটিক্স বা ট্র্যাকিং নেই এবং এটি আপনার চ্যাট বা ফাইল আপলোড করে না। AI মডেল আপনার ডিভাইসেই চলে।</string>
+  <string name="nx_privacy_local_data" translatable="true">এই ডিভাইসের ডেটা</string>
+  <string name="nx_privacy_conversations" translatable="true">কথোপকথন</string>
+  <string name="nx_privacy_messages" translatable="true">মেসেজ</string>
+  <string name="nx_privacy_controls" translatable="true">নিয়ন্ত্রণ</string>
+  <string name="nx_clear_history" translatable="true">চ্যাট হিস্ট্রি মুছুন</string>
+  <string name="nx_clear_history_confirm" translatable="true">সব সেভ করা চ্যাট এই ডিভাইস থেকে মুছে যাবে। ডাউনলোড করা মডেল থেকে যাবে।</string>
+  <string name="nx_clear_all_data" translatable="true">সব লোকাল ডেটা মুছুন</string>
+  <string name="nx_clear_all_confirm" translatable="true">চ্যাট হিস্ট্রি, সেভ করা পছন্দ, মডেলের রেকর্ড ও ক্যাশ ফাইল মুছে যাবে। ডাউনলোড করা মডেল ফাইল থেকে যাবে; সেগুলো মডেল হাব থেকে মুছুন।</string>
+  <string name="nx_result_history_cleared" translatable="true">চ্যাট হিস্ট্রি মুছে ফেলা হয়েছে।</string>
+  <string name="nx_result_all_cleared" translatable="true">লোকাল ডেটা মুছে ফেলা হয়েছে।</string>
+  <string name="nx_result_failed" translatable="true">কিছু একটা ভুল হয়েছে। আবার চেষ্টা করুন।</string>
+  <string name="nx_privacy_permissions" translatable="true">পারমিশন</string>
+  <string name="nx_privacy_permissions_body" translatable="true">এই অ্যাপ যেসব পারমিশন ঘোষণা করেছে। রানটাইম পারমিশন শুধু সংশ্লিষ্ট ফিচার ব্যবহারের সময় চাওয়া হয়।</string>
+  <string name="nx_perm_granted" translatable="true">দেওয়া আছে</string>
+  <string name="nx_perm_not_granted" translatable="true">দেওয়া নেই</string>
+  <string name="nx_perm_internet" translatable="true">ইন্টারনেট (মডেল ডাউনলোড)</string>
+  <string name="nx_perm_network_state" translatable="true">নেটওয়ার্ক স্ট্যাটাস</string>
+  <string name="nx_perm_camera" translatable="true">ক্যামেরা</string>
+  <string name="nx_perm_microphone" translatable="true">মাইক্রোফোন</string>
+  <string name="nx_perm_notifications" translatable="true">নোটিফিকেশন</string>
+  <string name="nx_perm_media" translatable="true">ছবি ও ভিডিও</string>
+  <string name="nx_perm_calendar" translatable="true">ক্যালেন্ডার</string>
+  <string name="nx_perm_foreground" translatable="true">ব্যাকগ্রাউন্ড ডাউনলোড</string>
+  <string name="nx_open_system_settings" translatable="true">সিস্টেম অ্যাপ সেটিংস খুলুন</string>
+  <string name="nx_privacy_network" translatable="true">নেটওয়ার্ক ব্যবহার</string>
+  <string name="nx_privacy_network_body" translatable="true">ইন্টারনেট ব্যবহার হয় মডেল ও উপলব্ধ মডেলের তালিকা ডাউনলোড করতে। এই অ্যাপ কখনো আপনার চ্যাট, প্রম্পট বা ফাইল পাঠায় না। আপনি নিজে শুরু করা ঐচ্ছিক ফিচার (যেমন ওয়েব ঠিকানা থেকে স্কিল ইমপোর্ট) ব্যবহার করলেই নেটওয়ার্ক লাগে। মডেল ডাউনলোড ও লোড হয়ে গেলে তার সমর্থিত ফিচার অফলাইনে কাজ করে।</string>
+  <string name="nx_hub_title" translatable="true">মডেল হাব</string>
+  <string name="nx_hub_installed_size" translatable="true">ইনস্টল করা মডেল</string>
+  <string name="nx_hub_device_ram" translatable="true">ডিভাইসের RAM</string>
+  <string name="nx_hub_gb" translatable="true">%1$d GB</string>
+  <string name="nx_hub_internet_note" translatable="true">মডেল ডাউনলোডে ইন্টারনেট লাগে এবং ফাইল বড় হতে পারে। সম্ভব হলে Wi-Fi ব্যবহার করুন।</string>
+  <string name="nx_hub_no_models" translatable="true">এখন কোনো মডেল পাওয়া যাচ্ছে না। ইন্টারনেট সংযোগ দেখে এই স্ক্রিন আবার খুলুন।</string>
+  <string name="nx_hub_downloading" translatable="true">ডাউনলোড হচ্ছে</string>
+  <string name="nx_hub_installed" translatable="true">ইনস্টল করা</string>
+  <string name="nx_hub_available" translatable="true">উপলব্ধ</string>
+  <string name="nx_hub_size_runtime" translatable="true">%1$s · %2$s</string>
+  <string name="nx_hub_compat_ok" translatable="true">প্রায় %1$d GB RAM লাগে · এই ডিভাইসে আছে %2$d GB</string>
+  <string name="nx_hub_compat_low" translatable="true">প্রায় %1$d GB RAM লাগে · এই ডিভাইসে আছে %2$d GB। লোড নাও হতে পারে।</string>
+  <string name="nx_hub_compat_storage" translatable="true">এই মডেল ডাউনলোডের জন্য যথেষ্ট খালি জায়গা নেই।</string>
+  <string name="nx_hub_compat_unknown" translatable="true">RAM-এর প্রয়োজনীয়তা উল্লেখ নেই। সামঞ্জস্য নিশ্চিত নয়।</string>
+  <string name="nx_hub_progress" translatable="true">%2$s এর মধ্যে %1$s · %3$s/সে</string>
+  <string name="nx_hub_unzipping" translatable="true">আনপ্যাক হচ্ছে…</string>
+  <string name="nx_hub_download" translatable="true">ডাউনলোড</string>
+  <string name="nx_hub_retry" translatable="true">আবার ডাউনলোড</string>
+  <string name="nx_hub_resume" translatable="true">ডাউনলোড চালিয়ে যান</string>
+  <string name="nx_hub_failed" translatable="true">ডাউনলোড ব্যর্থ হয়েছে।</string>
+  <string name="nx_hub_unavailable" translatable="true">এই ডিভাইসে পাওয়া যাবে না।</string>
+  <string name="nx_hub_auth_required" translatable="true">এই মডেলের জন্য Hugging Face সাইন-ইন বা লাইসেন্স গ্রহণ লাগে। চালিয়ে যেতে এর AI টাস্ক স্ক্রিন থেকে খুলুন।</string>
+  <string name="nx_hub_confirm_download_title" translatable="true">মডেল ডাউনলোড করবেন?</string>
+  <string name="nx_hub_confirm_download_body" translatable="true">%1$s (%2$s) আপনার ইন্টারনেট সংযোগ ব্যবহার করে ডাউনলোড হবে।</string>
+  <string name="nx_hub_confirm_delete_title" translatable="true">মডেল মুছবেন?</string>
+  <string name="nx_hub_confirm_delete_body" translatable="true">%1$s এই ডিভাইস থেকে মুছে যাবে। পরে আবার ডাউনলোড করতে পারবেন।</string>
+  <string name="nx_settings_title" translatable="true">সেটিংস</string>
+  <string name="nx_settings_language" translatable="true">ভাষা</string>
+  <string name="nx_language_system" translatable="true">সিস্টেম</string>
+  <string name="nx_language_english" translatable="true">English</string>
+  <string name="nx_language_bangla" translatable="true">বাংলা</string>
+  <string name="nx_settings_language_unsupported" translatable="true">অ্যাপের ভাষা বাছাইয়ের জন্য Android 13 বা নতুন লাগে। এই ডিভাইসে অ্যাপ সিস্টেমের ভাষা অনুসরণ করে।</string>
+  <string name="nx_settings_preferences" translatable="true">পছন্দ</string>
+  <string name="nx_settings_default_model" translatable="true">AI টুলসের ডিফল্ট মডেল</string>
+  <string name="nx_settings_default_model_auto" translatable="true">স্বয়ংক্রিয় (প্রথম ইনস্টল করা)</string>
+  <string name="nx_settings_no_models" translatable="true">ডিফল্ট বাছতে মডেল হাবে একটি মডেল ইনস্টল করুন।</string>
+  <string name="nx_settings_more" translatable="true">আরও</string>
+  <string name="nx_tools_title" translatable="true">AI টুলস</string>
+  <string name="nx_tool_writing" translatable="true">লেখা</string>
+  <string name="nx_tool_summarize" translatable="true">সারসংক্ষেপ</string>
+  <string name="nx_tool_translate" translatable="true">অনুবাদ</string>
+  <string name="nx_tool_study" translatable="true">পড়াশোনা</string>
+  <string name="nx_tool_rewrite" translatable="true">পুনর্লিখন</string>
+  <string name="nx_tool_notes" translatable="true">নোট</string>
+  <string name="nx_tool_writing_hint" translatable="true">আমি কী লিখব?</string>
+  <string name="nx_tool_summarize_hint" translatable="true">সারসংক্ষেপ করার টেক্সট পেস্ট করুন</string>
+  <string name="nx_tool_translate_hint" translatable="true">অনুবাদের টেক্সট পেস্ট করুন</string>
+  <string name="nx_tool_study_hint" translatable="true">একটি বিষয় লিখুন বা পড়ার উপাদান পেস্ট করুন</string>
+  <string name="nx_tool_rewrite_hint" translatable="true">পুনর্লিখনের টেক্সট পেস্ট করুন</string>
+  <string name="nx_tool_notes_hint" translatable="true">আপনার এলোমেলো নোট পেস্ট করুন</string>
+  <string name="nx_tools_model" translatable="true">মডেল</string>
+  <string name="nx_tools_target_language" translatable="true">যে ভাষায় অনুবাদ</string>
+  <string name="nx_tools_kind" translatable="true">ধরন</string>
+  <string name="nx_tools_tone" translatable="true">সুর</string>
+  <string name="nx_tools_mode" translatable="true">মোড</string>
+  <string name="nx_kind_free" translatable="true">মুক্ত লেখা</string>
+  <string name="nx_kind_email" translatable="true">ইমেইল</string>
+  <string name="nx_kind_blog" translatable="true">ব্লগ পোস্ট</string>
+  <string name="nx_kind_social" translatable="true">সোশ্যাল পোস্ট</string>
+  <string name="nx_tone_professional" translatable="true">পেশাদার</string>
+  <string name="nx_tone_friendly" translatable="true">বন্ধুত্বপূর্ণ</string>
+  <string name="nx_tone_casual" translatable="true">অনানুষ্ঠানিক</string>
+  <string name="nx_tone_formal" translatable="true">আনুষ্ঠানিক</string>
+  <string name="nx_tone_concise" translatable="true">সংক্ষিপ্ত</string>
+  <string name="nx_study_explain" translatable="true">সহজ ভাষায় ব্যাখ্যা</string>
+  <string name="nx_study_quiz" translatable="true">কুইজ</string>
+  <string name="nx_study_flashcards" translatable="true">ফ্ল্যাশকার্ড</string>
+  <string name="nx_notes_cleanup" translatable="true">নোট পরিষ্কার করুন</string>
+  <string name="nx_notes_actions" translatable="true">করণীয় তালিকা</string>
+  <string name="nx_notes_outline" translatable="true">রূপরেখা</string>
+  <string name="nx_tools_char_count" translatable="true">%1$d / %2$d অক্ষর</string>
+  <string name="nx_tools_run" translatable="true">চালান</string>
+  <string name="nx_tools_stop" translatable="true">থামান</string>
+  <string name="nx_tools_loading_model" translatable="true">আপনার ডিভাইসে মডেল লোড হচ্ছে…</string>
+  <string name="nx_tools_error_no_task" translatable="true">AI মডেলের তালিকা এখনো তৈরি নয়। মডেল হাব খুলে লোড হওয়ার জন্য অপেক্ষা করুন, তারপর আবার চেষ্টা করুন।</string>
+  <string name="nx_tools_error_init" translatable="true">মডেলটি লোড করা যায়নি। ডিভাইসে এর জন্য যথেষ্ট মেমোরি নাও থাকতে পারে।</string>
+  <string name="nx_tools_error_inference" translatable="true">মডেল একটি ত্রুটি নিয়ে থেমে গেছে।</string>
+  <string name="nx_tools_no_model_title" translatable="true">কোনো মডেল ইনস্টল করা নেই</string>
+  <string name="nx_tools_no_model_body" translatable="true">AI টুলস আপনার ডিভাইসে রাখা মডেলে চলে। আগে মডেল হাব থেকে একটি ডাউনলোড করুন।</string>
+  <string name="nx_tools_result" translatable="true">ফলাফল</string>
+  <string name="nx_tools_copy" translatable="true">কপি</string>
+  <string name="nx_tools_share" translatable="true">শেয়ার</string>
+  <string name="nx_tools_saved" translatable="true">চ্যাট হিস্ট্রিতে সেভ হয়েছে।</string>
+</resources>
