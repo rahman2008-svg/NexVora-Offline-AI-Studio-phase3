@@ -1,24 +1,18 @@
-name: Android Debug APK
+name: NexVora Offline AI Studio - Android APK
 
-# Builds an installable debug APK and uploads it as a workflow artifact.
-# Nothing is published or released by this workflow.
 on:
   workflow_dispatch:
   push:
-    branches: ["main"]
+    branches: [main]
     paths:
       - "Android/**"
       - ".github/workflows/android-debug.yml"
-  pull_request:
-    branches: ["main"]
-    paths:
-      - "Android/**"
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
-  group: android-debug-${{ github.ref }}
+  group: nexvora-android-${{ github.ref }}
   cancel-in-progress: true
 
 env:
@@ -26,53 +20,64 @@ env:
 
 jobs:
   build-debug:
-    name: Build Debug APK
+    name: Build and Publish APK
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
+
     defaults:
       run:
-        working-directory: ./Android/src
+        working-directory: Android/src
+
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up JDK 21
+      - name: Setup Java 21
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "21"
 
-      - name: Set up Gradle (dependency cache)
+      - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Install Android SDK Platform 37 and accept licenses
+      - name: Install Android SDK 37
         run: |
-          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
-          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-37.0"
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-37"
 
-      - name: Make gradlew executable
+      - name: Make Gradle Executable
         run: chmod +x ./gradlew
 
       - name: Build Debug APK
         run: ./gradlew :app:assembleDebug --stacktrace
 
-      - name: Name the APK
+      - name: Prepare APK
         id: apk
         run: |
           VERSION=$(grep -oP 'versionName = "\K[^"]+' app/build.gradle.kts)
-          SRC=app/build/outputs/apk/debug/app-debug.apk
-          test -f "$SRC" || { echo "::error::Debug APK not found at $SRC"; ls -R app/build/outputs || true; exit 1; }
+          SRC="app/build/outputs/apk/debug/app-debug.apk"
+          test -s "$SRC"
           DEST="${APP_NAME}-${VERSION}-debug.apk"
           cp "$SRC" "$DEST"
           echo "file=Android/src/$DEST" >> "$GITHUB_OUTPUT"
-          echo "### Debug APK built" >> "$GITHUB_STEP_SUMMARY"
-          echo "- File: \`$DEST\`" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Size: $(du -h "$DEST" | cut -f1)" >> "$GITHUB_STEP_SUMMARY"
+          echo "### APK Build Successful" >> "$GITHUB_STEP_SUMMARY"
+          echo "APK: $DEST" >> "$GITHUB_STEP_SUMMARY"
+          du -h "$DEST" >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Upload Debug APK
+      - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: NexVora-Offline-AI-Studio-debug-apk
           path: ${{ steps.apk.outputs.file }}
           if-no-files-found: error
           retention-days: 14
+
+      - name: Publish Direct APK Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: debug-${{ github.run_number }}-${{ github.run_attempt }}
+          name: NexVora Offline AI Studio Debug ${{ github.run_number }}
+          prerelease: true
+          generate_release_notes: true
+          files: ${{ steps.apk.outputs.file }}
